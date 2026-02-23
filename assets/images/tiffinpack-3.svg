@@ -1,0 +1,32 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="200" height="200" fill="#F0FFF0" rx="10"/>
+  
+  <!-- Tiffin Box Container -->
+  <rect x="30" y="30" width="140" height="140" fill="#98FB98" rx="5" stroke="#228B22" stroke-width="2"/>
+  
+  <!-- Divider -->
+  <line x1="30" y1="100" x2="170" y2="100" stroke="#228B22" stroke-width="2"/>
+  
+  <!-- Top section: Samosa bites -->
+  <polygon points="60,45 75,55 60,65 45,55" fill="#DAA520" stroke="#8B7500" stroke-width="1"/>
+  <polygon points="100,50 115,60 100,70 85,60" fill="#DAA520" stroke="#8B7500" stroke-width="1"/>
+  <polygon points="140,45 155,55 140,65 125,55" fill="#DAA520" stroke="#8B7500" stroke-width="1"/>
+  
+  <!-- Bottom section: Makhana (fox nuts) and mint dip -->
+  <circle cx="55" cy="125" r="8" fill="#F5DEB3" stroke="#CD853F" stroke-width="1"/>
+  <circle cx="70" cy="135" r="8" fill="#F5DEB3" stroke="#CD853F" stroke-width="1"/>
+  <circle cx="85" cy="120" r="8" fill="#F5DEB3" stroke="#CD853F" stroke-width="1"/>
+  
+  <!-- Mint yogurt dip -->
+  <ellipse cx="120" cy="130" rx="20" ry="15" fill="#E0FFFF"/>
+  <text x="120" y="133" font-size="14" fill="#008080" text-anchor="middle">💨</text>
+  
+  <!-- Apple slices -->
+  <circle cx="150" cy="125" r="7" fill="#DC143C"/>
+  <circle cx="160" cy="130" r="7" fill="#DC143C"/>
+  
+  <!-- Character indicator -->
+  <circle cx="150" cy="150" r="8" fill="#FFD700" stroke="#FFA500" stroke-width="2"/>
+  <text x="150" y="155" font-size="12" fill="#333" text-anchor="middle" dy="0.3em">🧠</text>
+</svg>

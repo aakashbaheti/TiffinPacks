@@ -1,0 +1,29 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="200" height="200" fill="#FFF8DC" rx="10"/>
+  
+  <!-- Tiffin Box Container -->
+  <rect x="30" y="30" width="140" height="140" fill="#E8B4B8" rx="5" stroke="#C85A64" stroke-width="2"/>
+  
+  <!-- Divider -->
+  <line x1="30" y1="100" x2="170" y2="100" stroke="#C85A64" stroke-width="2"/>
+  
+  <!-- Top section: Roti wraps -->
+  <circle cx="60" cy="55" r="15" fill="#D4A574"/>
+  <circle cx="110" cy="65" r="15" fill="#D4A574"/>
+  <text x="100" y="75" font-size="10" fill="#8B6914" text-anchor="middle">🌾</text>
+  
+  <!-- Bottom section: Paneer tikka and veggies -->
+  <circle cx="55" cy="120" r="12" fill="#FFB6C1"/>
+  <text x="55" y="125" font-size="12" fill="#FF1493" text-anchor="middle" dy="0.3em">●</text>
+  
+  <rect x="80" y="115" width="10" height="20" fill="#FF8C00" rx="2"/>
+  <text x="85" y="128" font-size="8" fill="#333" text-anchor="middle" dy="0.3em">🥕</text>
+  
+  <rect x="110" y="115" width="10" height="20" fill="#90EE90" rx="2"/>
+  <text x="115" y="128" font-size="8" fill="#333" text-anchor="middle" dy="0.3em">🥒</text>
+  
+  <!-- Character indicator -->
+  <circle cx="150" cy="150" r="8" fill="#FFD700" stroke="#FFA500" stroke-width="2"/>
+  <text x="150" y="155" font-size="12" fill="#333" text-anchor="middle" dy="0.3em">💪</text>
+</svg>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop - TiffinPacks Snack Kits</title>
+  <meta name="description" content="Browse our collection of affordable, nutritious Indian snack kits for kids. Filter by dietary preference and sort by price.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- HEADER & NAVIGATION -->
+  <header>
+    <div class="header-content">
+      <div class="logo">
+        <span>🍱</span>
+        <span>TiffinPacks</span>
+      </div>
+      
+      <div class="header-right">
+        <nav>
+          <ul>
+            <li><a href="index.html" data-i18n="home">Home</a></li>
+            <li><a href="shop.html" data-i18n="shop">Shop</a></li>
+            <li><a href="character-quiz.html" data-i18n="quiz">Character Quiz</a></li>
+            <li><a href="about.html" data-i18n="about">About</a></li>
+          </ul>
+        </nav>
+        
+        <button class="language-toggle" onclick="toggleLanguage()">EN/HI</button>
+
+        <a href="cart.html" class="cart-icon">
+          🛒
+          <span class="cart-count" style="display: none;">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <section class="container" style="padding: var(--spacing-lg) 0;">
+      <h1 style="color: var(--primary);" data-i18n="shop">Shop</h1>
+      <p style="color: var(--text-light); margin-bottom: var(--spacing-lg); font-size: 0.95rem;">
+        Pick your favorite character pack or take the <a href="character-quiz.html" style="font-weight: 600;">character quiz</a> to find your match!
+      </p>
+
+      <!-- FILTERS & SEARCH -->
+      <div class="filters">
+        <!-- SEARCH BAR -->
+        <div class="search-bar">
+          <input 
+            type="text" 
+            id="search-input" 
+            data-i18n-placeholder="search_placeholder"
+            placeholder="🔍 Search by name or ingredients..."
+            aria-label="Search products"
+          >
+        </div>
+
+        <!-- FILTER CONTROLS -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-lg);">
+          
+          <!-- DIETARY FILTER -->
+          <div class="filter-group">
+            <label class="filter-label" data-i18n="dietary_preference">Dietary Preference</label>
+            <div>
+              <span class="filter-chip active" onclick="filterAndRender('dietary', 'all', this)" data-i18n="all_products">
+                All Products
+              </span>
+              <span class="filter-chip" onclick="filterAndRender('dietary', 'vegetarian', this)">
+                🥬 Vegetarian
+              </span>
+              <span class="filter-chip" onclick="filterAndRender('dietary', 'halal', this)">
+                ☪️ Halal
+              </span>
+            </div>
+          </div>
+
+          <!-- NUTRITION TAG FILTER -->
+          <div class="filter-group">
+            <label class="filter-label" data-i18n="nutrition_focus">Nutrition Focus</label>
+            <div>
+              <span class="filter-chip" onclick="filterAndRender('tag', '', this)" data-i18n="all_tags">
+                All Tags
+              </span>
+              <span class="filter-chip" onclick="filterAndRender('tag', 'Protein', this)">
+                💪 Protein
+              </span>
+              <span class="filter-chip" onclick="filterAndRender('tag', 'Whole Grains', this)">
+                🌾 Whole Grains
+              </span>
+              <span class="filter-chip" onclick="filterAndRender('tag', 'Vitamins', this)">
+                ✨ Vitamins
+              </span>
+            </div>
+          </div>
+
+          <!-- PRICE SORT -->
+          <div class="filter-group">
+            <label class="filter-label" data-i18n="sort_by_price">Sort by Price</label>
+            <select id="price-sort" onchange="filterAndRender()" aria-label="Sort by price">
+              <option value="default" data-i18n="default">Default</option>
+              <option value="low-high" data-i18n="low_to_high">Low to High</option>
+              <option value="high-low" data-i18n="high_to_low">High to Low</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRODUCT GRID -->
+      <div class="grid grid-3" id="product-grid" role="region" aria-label="Product listings">
+        <!-- Products loaded here by JavaScript -->
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>TiffinPacks</h4>
+          <p>Affordable, nutritious, culturally inclusive Indian snack kits for kids.</p>
+          <p style="font-size: 0.9rem; margin-top: 1rem;">🍱 2026 | Made with care for families.</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="shop.html">All Packs</a></li>
+            <li><a href="shop.html">Vegetarian</a></li>
+            <li><a href="shop.html">Halal</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="about.html">Our Mission</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 TiffinPacks. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="language.js"></script>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+  <script>
+    function toggleLanguage() {
+      const newLang = currentLanguage === 'en' ? 'hi' : 'en';
+      setLanguage(newLang);
+      updateLanguageButton();
+    }
+    
+    function updateLanguageButton() {
+      const btn = document.querySelector('.language-toggle');
+      btn.textContent = currentLanguage === 'en' ? 'EN/HI' : 'HI/EN';
+    }
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      updateLanguageButton();
+    });
+
+    /**
+     * Shop Page: Initialize filters and render products
+     */
+    
+    // State for current filters
+    let currentFilters = {
+      search: '',
+      dietary: 'all',
+      tag: '',
+      sort: 'default'
+    };
+
+    /**
+     * Filter and re-render products
+     */
+    function filterAndRender(filterType, value, element) {
+      // Handle filter chips - visual feedback
+      if (element) {
+        const group = element.parentElement;
+        group.querySelectorAll('.filter-chip').forEach(chip => {
+          chip.classList.remove('active');
+        });
+        element.classList.add('active');
+      }
+
+      // Update filter state
+      if (filterType === 'dietary') {
+        currentFilters.dietary = value;
+      } else if (filterType === 'tag') {
+        currentFilters.tag = value;
+      } else if (filterType === 'sort' || filterType === undefined) {
+        const sortSelect = document.getElementById('price-sort');
+        currentFilters.sort = sortSelect.value;
+      }
+
+      // Get filtered products
+      const filtered = getFilteredProducts(
+        products,
+        currentFilters.search,
+        currentFilters.dietary,
+        currentFilters.tag,
+        currentFilters.sort
+      );
+
+      // Render
+      renderProductGrid(filtered, 'product-grid');
+    }
+
+    /**
+     * Initialize shop page
+     */
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initial render of all products
+      renderProductGrid(products, 'product-grid');
+
+      // Search functionality
+      const searchInput = document.getElementById('search-input');
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          currentFilters.search = e.target.value;
+          filterAndRender();
+        });
+      }
+
+      // Price sort listener
+      const priceSort = document.getElementById('price-sort');
+      if (priceSort) {
+        priceSort.addEventListener('change', () => {
+          filterAndRender();
+        });
+      }
+    });
+  </script>
+</body>
+</html>

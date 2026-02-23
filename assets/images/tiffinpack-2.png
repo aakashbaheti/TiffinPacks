@@ -1,0 +1,32 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="200" height="200" fill="#E6F3FF" rx="10"/>
+  
+  <!-- Tiffin Box Container -->
+  <rect x="30" y="30" width="140" height="140" fill="#87CEEB" rx="5" stroke="#4169E1" stroke-width="2"/>
+  
+  <!-- Divider -->
+  <line x1="30" y1="100" x2="170" y2="100" stroke="#4169E1" stroke-width="2"/>
+  
+  <!-- Top section: Mini idlis -->
+  <circle cx="55" cy="55" r="12" fill="#F5DEB3"/>
+  <circle cx="85" cy="60" r="12" fill="#F5DEB3"/>
+  <circle cx="115" cy="55" r="12" fill="#F5DEB3"/>
+  <circle cx="145" cy="60" r="12" fill="#F5DEB3"/>
+  
+  <!-- Bottom section: Sambar dip and chana -->
+  <rect x="40" y="115" width="30" height="20" fill="#8B4513" rx="3"/>
+  <text x="55" y="127" font-size="10" fill="#333" text-anchor="middle" dy="0.2em">🍲</text>
+  
+  <circle cx="85" cy="125" r="10" fill="#D2B48C"/>
+  <text x="85" y="130" font-size="9" fill="#8B4513" text-anchor="middle" dy="0.2em">●</text>
+  
+  <!-- Mango slices -->
+  <circle cx="120" cy="120" r="8" fill="#FFD700"/>
+  <circle cx="130" cy="130" r="8" fill="#FFD700"/>
+  <text x="125" y="128" font-size="10" fill="#333" text-anchor="middle" dy="0.2em">🥭</text>
+  
+  <!-- Character indicator -->
+  <circle cx="150" cy="150" r="8" fill="#FFD700" stroke="#FFA500" stroke-width="2"/>
+  <text x="150" y="155" font-size="12" fill="#333" text-anchor="middle" dy="0.3em">🚂</text>
+</svg>

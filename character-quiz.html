@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Which TiffinPacks Character Are You? - Fun Quiz Game</title>
+  <meta name="description" content="Take the fun quiz and discover which TiffinPacks character you're most like!">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .quiz-container {
+      background: linear-gradient(135deg, #1a2f4a 0%, #2d4a6f 100%);
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2rem 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    .quiz-header {
+      text-align: center;
+      color: white;
+      margin-bottom: 2rem;
+    }
+
+    .quiz-header h1 {
+      color: white;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .question-box {
+      background: white;
+      border-radius: 15px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .question-number {
+      font-size: 0.9rem;
+      color: #1a2f4a;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .question-text {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #1A1A2E;
+      margin-bottom: 1.5rem;
+    }
+
+    .answer-options {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .answer-btn {
+      background: #F5F7FA;
+      border: 2px solid #DEE2E6;
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: left;
+    }
+
+    .answer-btn:hover {
+      background: #1a2f4a;
+      color: white;
+      border-color: #0f1f30;
+      transform: translateX(5px);
+    }
+
+    .answer-btn.selected {
+      background: #1a2f4a;
+      color: white;
+      border-color: #0f1f30;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 10px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 10px;
+      margin-bottom: 2rem;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: white;
+      border-radius: 10px;
+      transition: width 0.3s ease;
+    }
+
+    .quiz-buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .quiz-buttons button {
+      padding: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .result-card {
+      background: white;
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .character-emoji {
+      font-size: 5rem;
+      margin: 1rem 0;
+      animation: bounce 2s infinite;
+    }
+
+    .character-name {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #FF6B35;
+      margin: 1rem 0;
+    }
+
+    .character-message {
+      font-size: 1.2rem;
+      color: #555;
+      margin: 1rem 0;
+      line-height: 1.8;
+    }
+
+    .character-products {
+      background: #FFF5F0;
+      border-radius: 15px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .character-products h4 {
+      color: #FF6B35;
+      margin-bottom: 1rem;
+    }
+
+    .product-list {
+      list-style: none;
+      text-align: left;
+    }
+
+    .product-list li {
+      padding: 0.5rem 0;
+      color: #555;
+    }
+
+    .product-list li::before {
+      content: "🌟 ";
+      margin-right: 0.5rem;
+    }
+
+    .quiz-hidden {
+      display: none !important;
+    }
+
+    .character-badge {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-top: 1rem;
+    }
+
+    .badge-bheem {
+      background: rgba(255, 71, 87, 0.2);
+      color: #FF4757;
+    }
+
+    .badge-auggie {
+      background: rgba(46, 213, 115, 0.2);
+      color: #2ED573;
+    }
+
+    .badge-motu {
+      background: rgba(9, 132, 227, 0.2);
+      color: #0984E3;
+    }
+
+    .badge-cockroach {
+      background: rgba(162, 155, 254, 0.2);
+      color: #A29BFE;
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER & NAVIGATION -->
+  <header>
+    <div class="header-content">
+      <div class="logo">
+        <span>🍱</span>
+        <span>TiffinPacks</span>
+      </div>
+      
+      <div class="header-right">
+        <nav>
+          <ul>
+            <li><a href="index.html" data-i18n="home">Home</a></li>
+            <li><a href="shop.html" data-i18n="shop">Shop</a></li>
+            <li><a href="character-quiz.html" data-i18n="quiz">Character Quiz</a></li>
+            <li><a href="about.html" data-i18n="about">About</a></li>
+          </ul>
+        </nav>
+        
+        <button class="language-toggle" onclick="toggleLanguage()">EN/HI</button>
+
+        <a href="cart.html" class="cart-icon">
+          🛒
+          <span class="cart-count" style="display: none;">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="container" style="padding: var(--spacing-lg) 0;">
+      <!-- QUIZ SECTION -->
+      <div id="quiz-section">
+        <div class="quiz-container">
+          <div class="quiz-header">
+            <h1 data-i18n="quiz_title">🎮 Who Are You? 🎮</h1>
+            <p style="font-size: 1.2rem; margin: 0;" data-i18n="quiz_subtitle">Find out which TiffinPacks character you're most like!</p>
+          </div>
+
+          <!-- PROGRESS BAR -->
+          <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill" style="width: 0%;"></div>
+          </div>
+
+          <!-- QUESTION BOX -->
+          <div class="question-box">
+            <div class="question-number" id="question-number">Question 1 of 5</div>
+            <div class="question-text" id="question-text"></div>
+            <div class="answer-options" id="answer-options"></div>
+          </div>
+
+          <!-- QUIZ BUTTONS -->
+          <div class="quiz-buttons">
+            <button class="btn btn-outline" id="prev-btn" onclick="previousQuestion()" style="display: none;">← Previous</button>
+            <button class="btn btn-primary" id="next-btn" onclick="nextQuestion()" disabled>Next →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- RESULT SECTION -->
+      <div id="result-section" class="quiz-hidden">
+        <div class="result-card" id="result-card">
+          <!-- Result loaded by JavaScript -->
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+          <button class="btn btn-primary" onclick="retakeQuiz()" style="margin-right: 1rem;">🔄 Retake Quiz</button>
+          <a href="shop.html" class="btn btn-secondary">🛒 Shop Your Pack</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>TiffinPacks</h4>
+          <p>Character-themed lunch kits for kids in India!</p>
+          <p style="font-size: 0.9rem; margin-top: 1rem;">🍱 2026 | Made for kids, loved by parents.</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="shop.html">All Packs</a></li>
+            <li><a href="shop.html">Vegetarian</a></li>
+            <li><a href="shop.html">Halal</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Fun</h4>
+          <ul>
+            <li><a href="character-quiz.html">Find Your Character</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 TiffinPacks. All rights reserved. Made for every Indian kid! 🇮🇳</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="language.js"></script>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+
+  <script>
+    function toggleLanguage() {
+      const newLang = currentLanguage === 'en' ? 'hi' : 'en';
+      setLanguage(newLang);
+      updateLanguageButton();
+    }
+    
+    function updateLanguageButton() {
+      const btn = document.querySelector('.language-toggle');
+      btn.textContent = currentLanguage === 'en' ? 'EN/HI' : 'HI/EN';
+    }
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      updateLanguageButton();
+    });
+
+    /**
+     * Character Quiz Game
+     * Kids answer fun questions to discover which TiffinPacks character they're most like!
+     */
+
+    // Quiz questions
+    const quizQuestions = [
+      {
+        question: "quiz_q1",
+        answers: [
+          { text: "quiz_q1_a1", character: "bheem", points: { bheem: 3, auggie: 0, motu: 1, cockroach: 1 } },
+          { text: "quiz_q1_a2", character: "auggie", points: { bheem: 0, auggie: 3, motu: 1, cockroach: 1 } },
+          { text: "quiz_q1_a3", character: "motu", points: { bheem: 1, auggie: 0, motu: 3, cockroach: 2 } },
+          { text: "quiz_q1_a4", character: "cockroach", points: { bheem: 0, auggie: 1, motu: 1, cockroach: 3 } }
+        ]
+      },
+      {
+        question: "quiz_q2",
+        answers: [
+          { text: "quiz_q2_a1", character: "bheem", points: { bheem: 3, auggie: 1, motu: 0, cockroach: 0 } },
+          { text: "quiz_q2_a2", character: "auggie", points: { bheem: 0, auggie: 3, motu: 0, cockroach: 1 } },
+          { text: "quiz_q2_a3", character: "motu", points: { bheem: 1, auggie: 0, motu: 3, cockroach: 0 } },
+          { text: "quiz_q2_a4", character: "cockroach", points: { bheem: 0, auggie: 1, motu: 1, cockroach: 3 } }
+        ]
+      },
+      {
+        question: "quiz_q3",
+        answers: [
+          { text: "quiz_q3_a1", character: "bheem", points: { bheem: 3, auggie: 0, motu: 1, cockroach: 0 } },
+          { text: "quiz_q3_a2", character: "auggie", points: { bheem: 0, auggie: 3, motu: 0, cockroach: 1 } },
+          { text: "quiz_q3_a3", character: "motu", points: { bheem: 1, auggie: 1, motu: 3, cockroach: 1 } },
+          { text: "quiz_q3_a4", character: "cockroach", points: { bheem: 1, auggie: 1, motu: 1, cockroach: 3 } }
+        ]
+      },
+      {
+        question: "quiz_q4",
+        answers: [
+          { text: "quiz_q4_a1", character: "bheem", points: { bheem: 3, auggie: 1, motu: 0, cockroach: 0 } },
+          { text: "quiz_q4_a2", character: "auggie", points: { bheem: 0, auggie: 3, motu: 1, cockroach: 0 } },
+          { text: "quiz_q4_a3", character: "motu", points: { bheem: 0, auggie: 0, motu: 3, cockroach: 2 } },
+          { text: "quiz_q4_a4", character: "cockroach", points: { bheem: 0, auggie: 1, motu: 2, cockroach: 3 } }
+        ]
+      },
+      {
+        question: "quiz_q5",
+        answers: [
+          { text: "quiz_q5_a1", character: "bheem", points: { bheem: 3, auggie: 0, motu: 1, cockroach: 0 } },
+          { text: "quiz_q5_a2", character: "auggie", points: { bheem: 0, auggie: 3, motu: 1, cockroach: 1 } },
+          { text: "quiz_q5_a3", character: "motu", points: { bheem: 1, auggie: 0, motu: 3, cockroach: 2 } },
+          { text: "quiz_q5_a4", character: "cockroach", points: { bheem: 0, auggie: 1, motu: 2, cockroach: 3 } }
+        ]
+      }
+    ];
+
+    // Character results
+    const characters = {
+      bheem: {
+        name: "bheem_name",
+        emoji: "💪",
+        message: "bheem_result",
+        products: ["Chota Bheem Power Pack", "Bheem's Energy Spirals"],
+        color: "bheem"
+      },
+      auggie: {
+        name: "auggie_name",
+        emoji: "🧠",
+        message: "auggie_result",
+        products: ["Auggie Smart Stack", "Auggie's Brain Boost Mix"],
+        color: "auggie"
+      },
+      motu: {
+        name: "motu_name",
+        emoji: "🚂",
+        message: "motu_result",
+        products: ["Motu Patlu Adventure Mix"],
+        color: "motu"
+      },
+      cockroach: {
+        name: "cockroach_name",
+        emoji: "🦗",
+        message: "cockroach_result",
+        products: ["Cockroach Squad Sweet Bites"],
+        color: "cockroach"
+      }
+    };
+
+    // Quiz state
+    let currentQuestion = 0;
+    let scores = { bheem: 0, auggie: 0, motu: 0, cockroach: 0 };
+    let selectedAnswers = [];
+
+    /**
+     * Load and display current question
+     */
+    function loadQuestion() {
+      const question = quizQuestions[currentQuestion];
+      const progress = ((currentQuestion + 1) / quizQuestions.length) * 100;
+
+      // Update progress bar
+      document.getElementById('progress-fill').style.width = progress + '%';
+
+      // Update question number
+      document.getElementById('question-number').textContent = `${t('question')} ${currentQuestion + 1} ${t('of')} ${quizQuestions.length}`;
+
+      // Update question text - translate the key
+      document.getElementById('question-text').textContent = t(question.question);
+
+      // Load answer options
+      const answerOptions = document.getElementById('answer-options');
+      answerOptions.innerHTML = '';
+
+      question.answers.forEach((answer, index) => {
+        const btn = document.createElement('button');
+        btn.className = 'answer-btn';
+        btn.textContent = t(answer.text);  // Translate the answer text
+        btn.onclick = () => selectAnswer(index);
+        
+        if (selectedAnswers[currentQuestion] === index) {
+          btn.classList.add('selected');
+        }
+
+        answerOptions.appendChild(btn);
+      });
+
+      // Update button states
+      const prevBtn = document.getElementById('prev-btn');
+      const nextBtn = document.getElementById('next-btn');
+
+      prevBtn.style.display = currentQuestion === 0 ? 'none' : 'block';
+      nextBtn.disabled = selectedAnswers[currentQuestion] === undefined;
+      nextBtn.textContent = currentQuestion === quizQuestions.length - 1 ? 'See Result →' : 'Next →';
+    }
+
+    /**
+     * Select an answer
+     */
+    function selectAnswer(index) {
+      selectedAnswers[currentQuestion] = index;
+      
+      // Update scores
+      const question = quizQuestions[currentQuestion];
+      const answer = question.answers[index];
+      
+      scores.bheem += answer.points.bheem;
+      scores.auggie += answer.points.auggie;
+      scores.motu += answer.points.motu;
+      scores.cockroach += answer.points.cockroach;
+
+      // Update button states
+      document.getElementById('next-btn').disabled = false;
+
+      // Visual feedback
+      const buttons = document.querySelectorAll('.answer-btn');
+      buttons.forEach((btn, i) => {
+        btn.classList.remove('selected');
+        if (i === index) {
+          btn.classList.add('selected');
+        }
+      });
+    }
+
+    /**
+     * Go to next question
+     */
+    function nextQuestion() {
+      if (currentQuestion < quizQuestions.length - 1) {
+        currentQuestion++;
+        loadQuestion();
+      } else {
+        // Show results
+        showResults();
+      }
+    }
+
+    /**
+     * Go to previous question
+     */
+    function previousQuestion() {
+      if (currentQuestion > 0) {
+        currentQuestion--;
+        loadQuestion();
+      }
+    }
+
+    /**
+     * Calculate and show results
+     */
+    function showResults() {
+      // Find character with highest score
+      let maxScore = 0;
+      let resultCharacter = '';
+
+      for (const [character, score] of Object.entries(scores)) {
+        if (score > maxScore) {
+          maxScore = score;
+          resultCharacter = character;
+        }
+      }
+
+      const result = characters[resultCharacter];
+
+      // Build result HTML - translate the character name and message
+      const resultHTML = `
+        <div class="character-emoji">${result.emoji}</div>
+        <div class="character-name">${t(result.name)}</div>
+        <div class="character-message">${t(result.message)}</div>
+        <div class="character-badge badge-${result.color}">
+          ⭐ You Are This Character! ⭐
+        </div>
+        <div class="character-products">
+          <h4>🎁 Perfect TiffinPacks For You:</h4>
+          <ul class="product-list">
+            ${result.products.map(product => `<li>${product}</li>`).join('')}
+          </ul>
+        </div>
+        <p style="color: #555; margin-top: 1rem; font-size: 0.95rem;">
+          These packs have the nutrition that matches your energy and personality! 💛
+        </p>
+      `;
+
+      document.getElementById('result-card').innerHTML = resultHTML;
+
+      // Hide quiz, show results
+      document.getElementById('quiz-section').classList.add('quiz-hidden');
+      document.getElementById('result-section').classList.remove('quiz-hidden');
+    }
+
+    /**
+     * Retake quiz
+     */
+    function retakeQuiz() {
+      currentQuestion = 0;
+      scores = { bheem: 0, auggie: 0, motu: 0, cockroach: 0 };
+      selectedAnswers = [];
+
+      document.getElementById('quiz-section').classList.remove('quiz-hidden');
+      document.getElementById('result-section').classList.add('quiz-hidden');
+
+      loadQuestion();
+    }
+
+    /**
+     * Initialize quiz
+     */
+    document.addEventListener('DOMContentLoaded', () => {
+      loadQuestion();
+    });
+  </script>
+</body>
+</html>

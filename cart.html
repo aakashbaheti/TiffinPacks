@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart - TiffinPacks</title>
+  <meta name="description" content="Review and manage your TiffinPacks shopping cart.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- HEADER & NAVIGATION -->
+  <header>
+    <div class="header-content">
+      <div class="logo">
+        <span>🍱</span>
+        <span>TiffinPacks</span>
+      </div>
+      
+      <div class="header-right">
+        <nav>
+          <ul>
+            <li><a href="index.html" data-i18n="home">Home</a></li>
+            <li><a href="shop.html" data-i18n="shop">Shop</a></li>
+            <li><a href="character-quiz.html" data-i18n="quiz">Character Quiz</a></li>
+            <li><a href="about.html" data-i18n="about">About</a></li>
+          </ul>
+        </nav>
+        
+        <button class="language-toggle" onclick="toggleLanguage()">EN/HI</button>
+
+        <a href="cart.html" class="cart-icon">
+          🛒
+          <span class="cart-count" style="display: none;">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="container" style="padding: var(--spacing-lg) 0;">
+      <h1 style="margin-bottom: var(--spacing-lg);">Your Shopping Cart</h1>
+
+      <!-- CART ITEMS & SUMMARY GRID -->
+      <div style="display: grid; grid-template-columns: 2fr 1fr; gap: var(--spacing-lg); margin-bottom: var(--spacing-xl);">
+        
+        <!-- LEFT: CART ITEMS -->
+        <div>
+          <div id="cart-items">
+            <!-- Cart items loaded by JavaScript -->
+          </div>
+
+          <!-- CONTINUE SHOPPING LINK -->
+          <div style="margin-top: var(--spacing-lg);">
+            <a href="shop.html" class="btn btn-outline btn-block">
+              ← Continue Shopping
+            </a>
+          </div>
+        </div>
+
+        <!-- RIGHT: SUMMARY & CHECKOUT -->
+        <div>
+          <!-- BUDGET-FRIENDLY MESSAGE -->
+          <div class="trust-note" style="margin-bottom: var(--spacing-lg);">
+            <strong>Budget-Friendly Promise</strong><br>
+            <small>Every TiffinPack is priced under $5. Affordable nutrition shouldn't be a luxury.</small>
+          </div>
+
+          <!-- ORDER SUMMARY -->
+          <div class="cart-summary">
+            <div class="summary-row">
+              <span>Subtotal:</span>
+              <span id="cart-item-count">0 items</span>
+            </div>
+            <div class="summary-row">
+              <span>Total:</span>
+              <span id="cart-total" style="color: var(--primary);">$0.00</span>
+            </div>
+
+            <!-- CHECKOUT BUTTON -->
+            <button 
+              class="btn btn-primary btn-block" 
+              id="checkout-btn"
+              onclick="window.location.href='checkout.html'"
+              style="margin-top: var(--spacing-lg); padding: var(--spacing-md);"
+            >
+              Proceed to Checkout →
+            </button>
+
+            <!-- INFO BOXES -->
+            <div style="margin-top: var(--spacing-lg); background: #f0f8ff; padding: var(--spacing-md); border-radius: var(--radius-md); border-left: 4px solid var(--secondary);">
+              <p style="font-size: 0.9rem; margin: 0;">
+                <strong>Secure checkout</strong> • No hidden fees • Free shipping info at checkout
+              </p>
+            </div>
+          </div>
+
+          <!-- WHY CHOOSE US -->
+          <div class="card" style="margin-top: var(--spacing-lg);">
+            <h4 style="color: var(--primary); margin-bottom: var(--spacing-sm);">Why Parents Trust TiffinPacks</h4>
+            <ul style="list-style: none; font-size: 0.9rem; line-height: 1.8;">
+              <li>✓ Clear, honest ingredients</li>
+              <li>✓ Affordable, under $5/pack</li>
+              <li>✓ Vegetarian & Halal options</li>
+              <li>✓ Real nutrition for kids</li>
+              <li>✓ Support schools & communities</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>TiffinPacks</h4>
+          <p>Affordable, nutritious, culturally inclusive Indian snack kits for kids.</p>
+          <p style="font-size: 0.9rem; margin-top: 1rem;">🍱 2026 | Made with care for families.</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="shop.html">All Packs</a></li>
+            <li><a href="shop.html">Vegetarian</a></li>
+            <li><a href="shop.html">Halal</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="about.html">Our Mission</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 TiffinPacks. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="language.js"></script>
+  <script src="app.js"></script>
+  <script>
+    function toggleLanguage() {
+      const newLang = currentLanguage === 'en' ? 'hi' : 'en';
+      setLanguage(newLang);
+      updateLanguageButton();
+    }
+    
+    function updateLanguageButton() {
+      const btn = document.querySelector('.language-toggle');
+      btn.textContent = currentLanguage === 'en' ? 'EN/HI' : 'HI/EN';
+    }
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      updateLanguageButton();
+    });
+    
+    /**
+     * Cart Page: Load and manage cart items
+     */
+
+    /**
+     * Initialize cart page
+     */
+    document.addEventListener('DOMContentLoaded', () => {
+      renderCartItems();
+      updateCartSummary();
+
+      // Listen for storage changes (cart updated from other page)
+      window.addEventListener('storage', () => {
+        renderCartItems();
+        updateCartSummary();
+      });
+    });
+  </script>
+</body>
+</html>

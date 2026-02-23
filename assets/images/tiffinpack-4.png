@@ -1,0 +1,33 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="200" height="200" fill="#FFE4B5" rx="10"/>
+  
+  <!-- Tiffin Box Container -->
+  <rect x="30" y="30" width="140" height="140" fill="#FFDAB9" rx="5" stroke="#FF8C69" stroke-width="2"/>
+  
+  <!-- Divider -->
+  <line x1="30" y1="100" x2="170" y2="100" stroke="#FF8C69" stroke-width="2"/>
+  
+  <!-- Top section: Wraps -->
+  <rect x="45" y="45" width="30" height="15" fill="#DEB887" rx="2" transform="rotate(-20 60 52)"/>
+  <rect x="100" y="50" width="30" height="15" fill="#DEB887" rx="2" transform="rotate(15 115 57)"/>
+  <text x="85" y="62" font-size="10" fill="#8B6914" text-anchor="middle">🌯</text>
+  
+  <!-- Bottom section: Chicken tikka -->
+  <circle cx="55" cy="120" r="11" fill="#CD5C5C"/>
+  <circle cx="75" cy="130" r="11" fill="#CD5C5C"/>
+  <text x="65" y="128" font-size="8" fill="#8B3A3A" text-anchor="middle" dy="0.2em">🍗</text>
+  
+  <!-- Cucumber -->
+  <rect x="105" y="118" width="8" height="18" fill="#6B8E23" rx="4"/>
+  <text x="109" y="128" font-size="8" fill="#333" text-anchor="middle" dy="0.2em">🥒</text>
+  
+  <!-- Dates -->
+  <circle cx="140" cy="122" r="7" fill="#654321"/>
+  <circle cx="150" cy="132" r="7" fill="#654321"/>
+  <text x="145" y="128" font-size="10" fill="#333" text-anchor="middle" dy="0.2em">🤎</text>
+  
+  <!-- Character indicator -->
+  <circle cx="150" cy="150" r="8" fill="#FFD700" stroke="#FFA500" stroke-width="2"/>
+  <text x="150" y="155" font-size="12" fill="#333" text-anchor="middle" dy="0.3em">💪</text>
+</svg>

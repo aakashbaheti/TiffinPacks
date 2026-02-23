@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TiffinPacks - Character-Themed Lunch Kits for Kids</title>
+  <meta name="description" content="TiffinPacks - Character-themed lunch kits for Indian kids. Like Lunchables, featuring Chota Bheem, Oggy, Motu Patlu & more.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- HEADER & NAVIGATION -->
+  <header>
+    <div class="header-content">
+      <div class="logo">
+        <span>🍱</span>
+        <span>TiffinPacks</span>
+      </div>
+      
+      <div class="header-right">
+        <nav>
+          <ul>
+            <li><a href="index.html" data-i18n="home">Home</a></li>
+            <li><a href="shop.html" data-i18n="shop">Shop</a></li>
+            <li><a href="character-quiz.html" data-i18n="quiz">Character Quiz</a></li>
+            <li><a href="about.html" data-i18n="about">About</a></li>
+          </ul>
+        </nav>
+        
+        <button class="language-toggle" onclick="toggleLanguage()">EN/HI</button>
+
+        <a href="cart.html" class="cart-icon">
+          🛒
+          <span class="cart-count" style="display: none;">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="container">
+        <h1 data-i18n="hero_title">🍱 TiffinPacks</h1>
+        <p class="hero-subtitle" data-i18n="hero_subtitle">Lunch Kits For Your Favorite Characters!</p>
+        <p class="hero-tagline" data-i18n="hero_tagline">Like Lunchables, but made just for Indian kids</p>
+        <div class="hero-cta">
+          <a href="shop.html" class="btn btn-primary" data-i18n="shop_now">🛒 Shop Now</a>
+          <a href="character-quiz.html" class="btn btn-outline" data-i18n="find_character">🎮 Find Your Character!</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHARACTER SHOWCASE -->
+    <section class="character-showcase">
+      <div class="container">
+        <h2 style="text-align: center; margin-bottom: var(--spacing-lg);" data-i18n="which_character">Which Character Are You?</h2>
+        <div class="character-grid">
+          <div class="character-card character-bheem">
+            <div class="character-card-inner">
+              <div class="character-emoji">💪</div>
+              <h3 data-i18n="bheem">Chota Bheem</h3>
+              <p data-i18n="bheem_desc">Brave and Strong</p>
+            </div>
+          </div>
+          <div class="character-card character-auggie">
+            <div class="character-card-inner">
+              <div class="character-emoji">🧠</div>
+              <h3 data-i18n="auggie">Oggy</h3>
+              <p data-i18n="auggie_desc">Smart and Curious</p>
+            </div>
+          </div>
+          <div class="character-card character-motu">
+            <div class="character-card-inner">
+              <div class="character-emoji">🚂</div>
+              <h3 data-i18n="motu">Motu Patlu</h3>
+              <p data-i18n="motu_desc">Fun and Adventurous</p>
+            </div>
+          </div>
+          <div class="character-card character-cockroach">
+            <div class="character-card-inner">
+              <div class="character-emoji">🦗</div>
+              <h3 data-i18n="cockroach">Cockroach Squad</h3>
+              <p data-i18n="cockroach_desc">Cute and Friendly</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALUE CARDS -->
+    <section class="container">
+      <h2 style="text-align: center; margin-bottom: var(--spacing-lg);" data-i18n="why_love">Why Kids Love TiffinPacks</h2>
+      <div class="grid grid-3">
+        <div class="card card-simple">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">😋</div>
+          <h3 data-i18n="super_yummy">Super Yummy</h3>
+          <p data-i18n="super_yummy_desc">Tastes amazing with all your favorite Indian flavors!</p>
+        </div>
+        <div class="card card-simple">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">💪</div>
+          <h3 data-i18n="super_strong">Super Strong</h3>
+          <p data-i18n="super_strong_desc">Real, healthy ingredients that make you strong!</p>
+        </div>
+        <div class="card card-simple">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎉</div>
+          <h3 data-i18n="super_fun">Super Fun</h3>
+          <p data-i18n="super_fun_desc">Character-themed packs with your favorite heroes!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section style="background-color: var(--primary); color: white; padding: var(--spacing-xl) var(--spacing-md); margin: var(--spacing-xl) 0; border-radius: 12px;">
+      <div class="container" style="text-align: center;">
+        <h2 style="color: white; margin-bottom: var(--spacing-lg); font-size: 1.8rem;" data-i18n="find_character_cta">Find Your Character & Start Shopping!</h2>
+        <p style="font-size: 1rem; margin-bottom: var(--spacing-lg); color: rgba(255,255,255,0.95);" data-i18n="discover_character">
+          Take the quiz to discover which TiffinPacks character matches your personality!
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="character-quiz.html" class="btn btn-outline" style="color: white; border: 2px solid white;" data-i18n="take_quiz">🎮 Take Quiz</a>
+          <a href="shop.html" class="btn" style="background: white; color: var(--primary); font-weight: 600;" data-i18n="shop_now">🛒 Shop Now</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>TiffinPacks</h4>
+          <p>Character-themed lunch kits for Indian kids.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="shop">Shop</h4>
+          <ul>
+            <li><a href="shop.html" data-i18n="all">All</a></li>
+            <li><a href="shop.html" data-i18n="vegetarian">Vegetarian</a></li>
+            <li><a href="shop.html" data-i18n="halal">Halal</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="about">About</h4>
+          <ul>
+            <li><a href="about.html" data-i18n="about_us">About Us</a></li>
+            <li><a href="about.html" data-i18n="our_mission">Our Mission</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="contact">Support</h4>
+          <ul>
+            <li><a href="#" data-i18n="contact">Contact</a></li>
+            <li><a href="product.html" data-i18n="about">Info</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 TiffinPacks. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="language.js"></script>
+  <script src="app.js"></script>
+  
+  <script>
+    function toggleLanguage() {
+      const newLang = currentLanguage === 'en' ? 'hi' : 'en';
+      setLanguage(newLang);
+      updateLanguageButton();
+    }
+    
+    function updateLanguageButton() {
+      const btn = document.querySelector('.language-toggle');
+      btn.textContent = currentLanguage === 'en' ? 'EN/HI' : 'HI/EN';
+    }
+    
+    document.addEventListener('DOMContentLoaded', updateLanguageButton);
+  </script>
+</body>
+</html>

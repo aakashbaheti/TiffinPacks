@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - TiffinPacks</title>
+  <meta name="description" content="Complete your TiffinPacks order at checkout.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- HEADER & NAVIGATION -->
+  <header>
+    <div class="header-content">
+      <div class="logo">
+        <span>🍱</span>
+        <span>TiffinPacks</span>
+      </div>
+      
+      <div class="header-right">
+        <nav>
+          <ul>
+            <li><a href="index.html" data-i18n="home">Home</a></li>
+            <li><a href="shop.html" data-i18n="shop">Shop</a></li>
+            <li><a href="character-quiz.html" data-i18n="quiz">Character Quiz</a></li>
+            <li><a href="about.html" data-i18n="about">About</a></li>
+          </ul>
+        </nav>
+        
+        <button class="language-toggle" onclick="toggleLanguage()">EN/HI</button>
+
+        <a href="cart.html" class="cart-icon">
+          🛒
+          <span class="cart-count" style="display: none;">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="container" style="padding: var(--spacing-lg) 0; max-width: 800px;">
+      <h1 style="margin-bottom: var(--spacing-lg);">Checkout</h1>
+
+      <!-- ERROR MESSAGES -->
+      <div id="form-errors"></div>
+
+      <!-- CHECKOUT FORM -->
+      <div id="checkout-form">
+        <form onsubmit="submitCheckoutForm(event)" novalidate>
+          <!-- CONTACT INFORMATION -->
+          <fieldset style="border: none; padding: 0; margin-bottom: var(--spacing-lg);">
+            <legend style="font-size: 1.3rem; font-weight: 700; margin-bottom: var(--spacing-md);">Contact Information</legend>
+
+            <div class="form-group">
+              <label for="name" class="required">Full Name</label>
+              <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                placeholder="John Doe"
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="required">Email Address</label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                placeholder="parent@example.com"
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone (Optional)</label>
+              <input 
+                type="tel" 
+                id="phone" 
+                name="phone" 
+                placeholder="+1 (555) 123-4567"
+              >
+            </div>
+          </fieldset>
+
+          <!-- SHIPPING ADDRESS -->
+          <fieldset style="border: none; padding: 0; margin-bottom: var(--spacing-lg);">
+            <legend style="font-size: 1.3rem; font-weight: 700; margin-bottom: var(--spacing-md);">Shipping Address</legend>
+
+            <div class="form-group">
+              <label for="address" class="required">Street Address</label>
+              <input 
+                type="text" 
+                id="address" 
+                name="address" 
+                placeholder="123 Main Street"
+                required
+              >
+            </div>
+
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: var(--spacing-md);">
+              <div class="form-group">
+                <label for="city">City / Town</label>
+                <input 
+                  type="text" 
+                  id="city" 
+                  name="city" 
+                  placeholder="New York"
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="zip">Postal Code</label>
+                <input 
+                  type="text" 
+                  id="zip" 
+                  name="zip" 
+                  placeholder="10001"
+                >
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="country" class="required">Country</label>
+              <select id="country" name="country" required>
+                <option value="">Select Country</option>
+                <option value="india">India</option>
+                <option value="usa">United States</option>
+                <option value="canada">Canada</option>
+                <option value="uk">United Kingdom</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </fieldset>
+
+          <!-- PAYMENT METHOD -->
+          <fieldset style="border: none; padding: 0; margin-bottom: var(--spacing-lg);">
+            <legend style="font-size: 1.3rem; font-weight: 700; margin-bottom: var(--spacing-md);">Payment Method</legend>
+
+            <div class="form-group">
+              <label for="payment" class="required">Select Payment Method</label>
+              <select id="payment" name="payment" required>
+                <option value="">Choose a payment method</option>
+                <option value="credit-card">Credit/Debit Card</option>
+                <option value="paypal">PayPal</option>
+                <option value="bank-transfer">Bank Transfer</option>
+                <option value="upi">UPI (India)</option>
+              </select>
+            </div>
+
+            <div class="trust-note">
+              <strong>Demo Mode:</strong> This is a demo checkout. No real payment will be processed. Your order would be confirmed with selected payment method.
+            </div>
+          </fieldset>
+
+          <!-- ORDER SUMMARY -->
+          <div class="card" style="margin-bottom: var(--spacing-lg);">
+            <h3 style="margin-bottom: var(--spacing-md);">Order Summary</h3>
+            <div id="checkout-order-summary" style="margin-bottom: var(--spacing-md);">
+              <!-- Summary loaded by JS -->
+            </div>
+            <div class="summary-total">
+              Total: <span id="checkout-total">$0.00</span>
+            </div>
+          </div>
+
+          <!-- SUBMIT BUTTON -->
+          <button 
+            type="submit" 
+            class="btn btn-primary btn-block"
+            style="padding: var(--spacing-md); font-size: 1.1rem;"
+          >
+            Complete Purchase
+          </button>
+
+          <button 
+            type="button"
+            class="btn btn-outline btn-block"
+            style="margin-top: var(--spacing-sm);"
+            onclick="window.location.href='cart.html'"
+          >
+            ← Back to Cart
+          </button>
+        </form>
+      </div>
+
+      <!-- ORDER CONFIRMATION -->
+      <div id="confirmation-box" style="display: none;">
+        <!-- Confirmation message loaded by JS -->
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>TiffinPacks</h4>
+          <p>Affordable, nutritious, culturally inclusive Indian snack kits for kids.</p>
+          <p style="font-size: 0.9rem; margin-top: 1rem;">🍱 2026 | Made with care for families.</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="shop.html">All Packs</a></li>
+            <li><a href="shop.html">Vegetarian</a></li>
+            <li><a href="shop.html">Halal</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="about.html">Our Mission</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 TiffinPacks. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="language.js"></script>
+  <script src="app.js"></script>
+  <script>
+    function toggleLanguage() {
+      const newLang = currentLanguage === 'en' ? 'hi' : 'en';
+      setLanguage(newLang);
+      updateLanguageButton();
+    }
+    
+    function updateLanguageButton() {
+      const btn = document.querySelector('.language-toggle');
+      btn.textContent = currentLanguage === 'en' ? 'EN/HI' : 'HI/EN';
+    }
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      updateLanguageButton();
+    });
+    
+    /**
+     * Checkout Page: Form validation and order processing
+     */
+
+    /**
+     * Load order summary from cart
+     */
+    function loadOrderSummary() {
+      const cart = getCart();
+      const total = getCartTotal();
+
+      let summaryHTML = '';
+
+      if (cart.length > 0) {
+        summaryHTML = cart
+          .map(item => `
+            <div style="display: flex; justify-content: space-between; padding: var(--spacing-sm) 0; border-bottom: 1px solid var(--border);">
+              <span>${item.name} × ${item.quantity}</span>
+              <span style="font-weight: 600;">$${(item.price * item.quantity).toFixed(2)}</span>
+            </div>
+          `)
+          .join('');
+      } else {
+        summaryHTML = '<p style="color: var(--text-light);">Your cart is empty.</p>';
+      }
+
+      document.getElementById('checkout-order-summary').innerHTML = summaryHTML;
+      document.getElementById('checkout-total').textContent = '$' + total.toFixed(2);
+    }
+
+    /**
+     * Initialize checkout page
+     */
+    document.addEventListener('DOMContentLoaded', () => {
+      loadOrderSummary();
+      
+      // Redirect to cart if no items
+      if (getCartItemCount() === 0) {
+        document.getElementById('checkout-form').innerHTML = `
+          <div class="alert alert-info">
+            Your cart is empty. <a href="shop.html">Browse our products</a>
+          </div>
+        `;
+      }
+    });
+  </script>
+</body>
+</html>

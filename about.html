@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About TiffinPacks - Our Mission & Impact</title>
+  <meta name="description" content="Learn about TiffinPacks mission to provide affordable, nutritious, and culturally inclusive snacks for kids.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- HEADER & NAVIGATION -->
+  <header>
+    <div class="header-content">
+      <div class="logo">
+        <span>🍱</span>
+        <span>TiffinPacks</span>
+      </div>
+      
+      <div class="header-right">
+        <nav>
+          <ul>
+            <li><a href="index.html" data-i18n="home">Home</a></li>
+            <li><a href="shop.html" data-i18n="shop">Shop</a></li>
+            <li><a href="character-quiz.html" data-i18n="quiz">Character Quiz</a></li>
+            <li><a href="about.html" data-i18n="about">About</a></li>
+          </ul>
+        </nav>
+        
+        <button class="language-toggle" onclick="toggleLanguage()">EN/HI</button>
+
+        <a href="cart.html" class="cart-icon">
+          🛒
+          <span class="cart-count" style="display: none;">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- HERO SECTION -->
+    <section style="background: linear-gradient(135deg, var(--secondary) 0%, #2d4a6f 100%); color: white; padding: var(--spacing-xl) var(--spacing-md); margin-bottom: var(--spacing-xl);">
+      <div class="container" style="text-align: center;">
+        <h1 style="color: white; margin-bottom: var(--spacing-md);" data-i18n="about_title">About TiffinPacks</h1>
+        <p style="font-size: 1.2rem; margin-bottom: 0; color: rgba(255,255,255,0.95);" data-i18n="about_subtitle">
+          We're building a better future for kids' snacking—one affordable, nutritious, culturally inclusive pack at a time.
+        </p>
+      </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+      <!-- OUR MISSION SECTION -->
+      <section style="margin-bottom: var(--spacing-xl);">
+        <h2 style="color: var(--primary); margin-bottom: var(--spacing-lg);" data-i18n="our_mission_heading">🎯 Our Mission</h2>
+        
+        <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--spacing-lg); align-items: start;">
+          <div>
+            <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: var(--spacing-md); color: var(--text-dark);">
+              <strong data-i18n="mission_text">To make nutritious, affordable, delicious snack packs that kids love and parents trust. We use real Indian ingredients, no artificial junk, and respect every family's dietary preferences.</strong>
+            </p>
+
+            <p style="margin-bottom: var(--spacing-md);">
+              We know that busy parents want the best for their kids—but affordability and trust matter as much as nutrition. That's why we created TiffinPacks:
+            </p>
+
+            <ul style="list-style: none; margin-bottom: var(--spacing-md);">
+              <li style="padding: var(--spacing-sm) 0; border-bottom: 1px solid var(--border);">
+                <strong>💰 Affordable:</strong> Every pack under $5—real value for families with tight budgets
+              </li>
+              <li style="padding: var(--spacing-sm) 0; border-bottom: 1px solid var(--border);">
+                <strong>🥗 Nutritious:</strong> Whole grains, legumes, and seeds—exactly what growing bodies need
+              </li>
+              <li style="padding: var(--spacing-sm) 0; border-bottom: 1px solid var(--border);">
+                <strong>🌍 Culturally Inclusive:</strong> Vegetarian & halal options that respect every family's values
+              </li>
+              <li style="padding: var(--spacing-sm) 0;">
+                <strong>🤝 Built on Trust:</strong> Clear ingredients, transparent labeling, honest communication
+              </li>
+            </ul>
+
+            <p style="font-style: italic; color: var(--text-light);">
+              "We don't believe nutritious snacking should be a luxury. It should be accessible to every kid, everywhere."
+            </p>
+          </div>
+
+          <div class="card" style="background: linear-gradient(135deg, #fff3cd 0%, #ffe9a0 100%); border: none;">
+            <h4 style="margin-bottom: var(--spacing-md);">The TiffinPacks Difference</h4>
+            <ul style="list-style: none;">
+              <li style="margin-bottom: var(--spacing-sm);">✓ No artificial colors</li>
+              <li style="margin-bottom: var(--spacing-sm);">✓ No artificial flavors</li>
+              <li style="margin-bottom: var(--spacing-sm);">✓ No preservatives</li>
+              <li style="margin-bottom: var(--spacing-sm);">✓ No vague "natural flavors"</li>
+              <li style="margin-bottom: var(--spacing-sm);">✓ No hidden ingredients</li>
+              <li style="margin-bottom: var(--spacing-sm);">✓ Just wholesome, real food</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHO WE SERVE SECTION -->
+      <section style="margin-bottom: var(--spacing-xl);">
+        <h2 style="color: var(--primary); margin-bottom: var(--spacing-lg);" data-i18n="who_we_serve">👨‍👩‍👧 Who We Serve</h2>
+        
+        <div class="grid grid-2">
+          <div class="card">
+            <h3 style="margin-bottom: var(--spacing-md);" data-i18n="serve_families">Low-Income Families</h3>
+            <p data-i18n="serve_families_text">
+              Parents working multiple jobs deserve affordable snacks they can feel good about. Every TiffinPack is under $5 because we respect your budget.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 style="margin-bottom: var(--spacing-md);" data-i18n="serve_kids">Growing Kids</h3>
+            <p data-i18n="serve_kids_text">
+              Kids need protein, fiber, and nutrients—not sugar, artificial dyes, or mysterious ingredients. Our packs are designed for healthy, happy growth.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 style="margin-bottom: var(--spacing-md);" data-i18n="serve_conscious">Culturally Conscious Parents</h3>
+            <p data-i18n="serve_conscious_text">
+              Whether vegetarian, halal, or just respectful of traditional values, we honor dietary and religious choices. Food is culture.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 style="margin-bottom: var(--spacing-md);" data-i18n="serve_schools">Schools & Community Programs</h3>
+            <p data-i18n="serve_schools_text">
+              We partner with schools and NGOs to provide nutritious snacking for underserved communities. Bulk discounts available.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- TRUST BUILDING SECTION -->
+      <section style="margin-bottom: var(--spacing-xl);">
+        <h2 style="color: var(--primary); margin-bottom: var(--spacing-lg);" data-i18n="build_trust">🤝 How We Build Trust</h2>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-lg); margin-bottom: var(--spacing-lg);">
+          <div>
+            <h3 style="margin-bottom: var(--spacing-md);" data-i18n="clear_labeling">Clear Labeling</h3>
+            <p data-i18n="clear_labeling_text">
+              No mystery ingredients. Every pack lists exactly what's inside—names you recognize, not mysterious E-numbers or "natural flavors." You can read our ingredient list and understand it.
+            </p>
+          </div>
+
+          <div>
+            <h3 style="margin-bottom: var(--spacing-md);" data-i18n="nutrition_transparency">Nutrition Transparency</h3>
+            <p data-i18n="nutrition_transparency_text">
+              We highlight protein, fiber, vitamins, and minerals. We explain why each ingredient matters. You're not guessing—you know exactly what your child is eating.
+            </p>
+          </div>
+
+          <div>
+            <h3 style="margin-bottom: var(--spacing-md);" data-i18n="dietary_respect">Dietary Respect</h3>
+            <p data-i18n="dietary_respect_text">
+              Vegetarian and halal badges aren't marketing—they're commitments. We respect religious and ethical dietary choices because food is identity, not just calories.
+            </p>
+          </div>
+
+          <div>
+            <h3 style="margin-bottom: var(--spacing-md);" data-i18n="community_accountability">Community Accountability</h3>
+            <p data-i18n="community_accountability_text">
+              We partner with schools and NGOs. We're not hiding behind corporate layers—we're visible, accessible, and answerable to the communities we serve.
+            </p>
+          </div>
+        </div>
+
+        <div class="trust-note" style="color: var(--text-dark);">
+          <strong data-i18n="packaged_healthy_title">Why Packaged But Healthy?</strong><br><br>
+          <span data-i18n="packaged_healthy_text">Many parents feel guilty about packaged snacks. But busy families need solutions. We fill that gap with pre-portioned, affordable packs made from ingredients you'd use at home. It's not about replacing fresh food—it's about supporting parents who need budget-friendly, healthy shortcuts.</span>
+        </div>
+      </section>
+
+      <!-- PARTNERSHIPS SECTION -->
+      <section style="margin-bottom: var(--spacing-xl);">
+        <h2 style="color: var(--primary); margin-bottom: var(--spacing-lg);">🤲 Our Partnerships & Impact</h2>
+        
+        <p style="margin-bottom: var(--spacing-lg);">
+          TiffinPacks partners with schools, NGOs, and community programs to bring nutrition to underserved kids:
+        </p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-lg); margin-bottom: var(--spacing-lg);">
+          <div class="card" style="border-top: 4px solid var(--success);">
+            <h3 style="margin-bottom: var(--spacing-md);">School Snacking Programs</h3>
+            <p>
+              We provide discounted bulk packs to schools serving low-income students. Nutritious mid-day snacks boost focus and energy for learning.
+            </p>
+          </div>
+
+          <div class="card" style="border-top: 4px solid var(--success);">
+            <h3 style="margin-bottom: var(--spacing-md);">Community NGOs</h3>
+            <p>
+              Partner organizations delivering food to vulnerable families trust us. Our transparent ingredients and affordable prices align with their values.
+            </p>
+          </div>
+
+          <div class="card" style="border-top: 4px solid var(--success);">
+            <h3 style="margin-bottom: var(--spacing-md);">Government Nutrition Programs</h3>
+            <p>
+              TiffinPacks meets nutrition standards for public health programs. We're building healthier communities through policy partnerships.
+            </p>
+          </div>
+
+          <div class="card" style="border-top: 4px solid var(--success);">
+            <h3 style="margin-bottom: var(--spacing-md);">Food Security Initiatives</h3>
+            <p>
+              We're committed to food security—ensuring every child has access to nutritious snacking regardless of family income.
+            </p>
+          </div>
+        </div>
+
+        <div style="background: #f0f8ff; padding: var(--spacing-lg); border-radius: var(--radius-lg); border-left: 4px solid var(--secondary); margin-bottom: var(--spacing-lg);">
+          <h4 style="margin-bottom: var(--spacing-sm);">Want to Partner With TiffinPacks?</h4>
+          <p style="margin-bottom: var(--spacing-sm);">
+            We're always looking for schools, NGOs, and community programs to partner with. Bulk discounts, custom nutrition profiles, and tailored support available.
+          </p>
+          <p style="color: var(--text-light); font-size: 0.95rem;">
+            Contact: partnerships[at]tiffin.local (Demo contact - replace with real email)
+          </p>
+        </div>
+      </section>
+
+      <!-- IMPACT STATS (Informational, not fake claims) -->
+      <section style="margin-bottom: var(--spacing-xl);">
+        <h2 style="color: var(--primary); margin-bottom: var(--spacing-lg);">📊 Our Scale & Commitment</h2>
+        
+        <div class="grid grid-3" style="margin-bottom: var(--spacing-lg);">
+          <div class="card" style="text-align: center;">
+            <p style="font-size: 2.5rem; font-weight: 700; color: var(--primary); margin-bottom: var(--spacing-xs);">6+</p>
+            <p style="font-weight: 600; margin-bottom: var(--spacing-sm);">Product SKUs</p>
+            <p style="color: var(--text-light); font-size: 0.9rem;">Each carefully crafted for nutrition & affordability</p>
+          </div>
+
+          <div class="card" style="text-align: center;">
+            <p style="font-size: 2.5rem; font-weight: 700; color: var(--primary); margin-bottom: var(--spacing-xs);">&lt; $5</p>
+            <p style="font-weight: 600; margin-bottom: var(--spacing-sm);">Per Pack</p>
+            <p style="color: var(--text-light); font-size: 0.9rem;">Budget-friendly nutrition for every family</p>
+          </div>
+
+          <div class="card" style="text-align: center;">
+            <p style="font-size: 2.5rem; font-weight: 700; color: var(--primary); margin-bottom: var(--spacing-xs);">2</p>
+            <p style="font-weight: 600; margin-bottom: var(--spacing-sm);">Dietary Options</p>
+            <p style="color: var(--text-light); font-size: 0.9rem;">Vegetarian & Halal for inclusive snacking</p>
+          </div>
+        </div>
+
+        <div style="background: #f9f7f4; padding: var(--spacing-lg); border-radius: var(--radius-lg);">
+          <h4 style="margin-bottom: var(--spacing-md);">Our Commitment Moving Forward</h4>
+          <ul style="list-style: none;">
+            <li style="padding: var(--spacing-sm) 0; border-bottom: 1px solid var(--border);">
+              → Expand partnerships with 50+ schools within 2 years
+            </li>
+            <li style="padding: var(--spacing-sm) 0; border-bottom: 1px solid var(--border);">
+              → Maintain affordability—never exceed $5 per pack
+            </li>
+            <li style="padding: var(--spacing-sm) 0; border-bottom: 1px solid var(--border);">
+              → Develop region-specific nutrition profiles (as more communities adopt)
+            </li>
+            <li style="padding: var(--spacing-sm) 0; border-bottom: 1px solid var(--border);">
+              → Increase food security access for 10,000+ kids annually
+            </li>
+            <li style="padding: var(--spacing-sm) 0;">
+              → Stay transparent, stay humble, stay focused on families, not profit
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CLOSING CTA -->
+      <section style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: var(--spacing-lg); border-radius: var(--radius-lg); text-align: center; margin-bottom: var(--spacing-xl);">
+        <h2 style="color: white; margin-bottom: var(--spacing-md);">Join the TiffinPacks Community</h2>
+        <p style="font-size: 1.1rem; margin-bottom: var(--spacing-lg);">
+          Great snacking doesn't have to be expensive or complicated. Let's build a healthier, more inclusive future for kids.
+        </p>
+        <a href="shop.html" class="btn btn-secondary" style="font-size: 1.1rem; padding: var(--spacing-md) var(--spacing-lg);">
+          Shop Now & Support Our Mission →
+        </a>
+      </section>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>TiffinPacks</h4>
+          <p>Affordable, nutritious, culturally inclusive Indian snack kits for kids.</p>
+          <p style="font-size: 0.9rem; margin-top: 1rem;">🍱 2026 | Made with care for families.</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="shop.html">All Packs</a></li>
+            <li><a href="shop.html">Vegetarian</a></li>
+            <li><a href="shop.html">Halal</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="about.html">Our Mission</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 TiffinPacks. All rights reserved. Made by parents, for parents.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="language.js"></script>
+  <script src="app.js"></script>
+  <script>
+    function toggleLanguage() {
+      const newLang = currentLanguage === 'en' ? 'hi' : 'en';
+      setLanguage(newLang);
+      updateLanguageButton();
+    }
+    
+    function updateLanguageButton() {
+      const btn = document.querySelector('.language-toggle');
+      btn.textContent = currentLanguage === 'en' ? 'EN/HI' : 'HI/EN';
+    }
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      updateLanguageButton();
+    });
+  </script>
+</body>
+</html>
