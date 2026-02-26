@@ -368,7 +368,7 @@ function renderCartItems() {
   container.innerHTML = cart
     .map(item => `
       <div class="cart-item">
-        <div class="cart-item-image">${item.image}</div>
+        <div class="cart-item-image"><img src="${item.image}" alt="${item.name}" loading="lazy"></div>
         <div class="cart-item-details">
           <div class="cart-item-name">${item.name}</div>
           <div class="cart-item-price">$${item.price.toFixed(2)} each</div>

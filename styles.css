@@ -669,9 +669,24 @@ label {
 }
 
 .cart-item-image {
-  font-size: 3rem;
-  min-width: 80px;
+  min-width: 100px;
+  width: 100px;
+  height: 100px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-light);
+  border-radius: var(--radius-md);
+  margin-right: var(--spacing-md);
+  overflow: hidden;
+}
+
+.cart-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .cart-item-details {
